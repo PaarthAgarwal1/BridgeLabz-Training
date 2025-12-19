@@ -1,4 +1,4 @@
-public class averageMarkInPCM {
+public class AverageMarkInPCM {
     public static void main(String[] args) {
         int physics = 95; // Example marks in Physics (given in question)
         int chemistry = 96; // Example marks in Chemistry (given in question)

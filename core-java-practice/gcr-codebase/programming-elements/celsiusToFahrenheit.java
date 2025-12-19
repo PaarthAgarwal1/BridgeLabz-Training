@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class celsiusToFahrenheit {
+public class CelsiusToFahrenheit {
     public static double convertCelsiusToFahrenheit(double celsius) {
         return (celsius * 9/5) + 32;
     }

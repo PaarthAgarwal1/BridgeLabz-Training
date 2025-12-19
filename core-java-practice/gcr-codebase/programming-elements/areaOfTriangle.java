@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class areaOfTriangle {
+public class AreaOfTriangle {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter the base of the triangle (Ex-5.0) :");

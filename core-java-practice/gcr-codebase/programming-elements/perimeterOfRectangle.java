@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class perimeterOfRectangle {
+public class PerimeterOfRectangle {
     public static double calculatePerimeter(double length, double width) {
         return 2 * (length + width);
     }

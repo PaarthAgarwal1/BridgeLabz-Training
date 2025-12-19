@@ -1,4 +1,4 @@
-public class reverseString {
+public class ReverseString {
     public static String reverseString(String s) {
         char[] charArray = s.toCharArray();
         int left = 0;

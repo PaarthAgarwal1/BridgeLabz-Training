@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class areaOfCircle {
+public class AreaOfCircle {
     public static double calculateArea(double radius) {
         return Math.round(Math.PI * radius * radius*100.0)/100.0;
     }

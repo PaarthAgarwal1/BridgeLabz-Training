@@ -1,4 +1,4 @@
-public class isPrime {
+public class IsPrime {
     public static boolean isPrime(int n) {
         if (n <= 1) {
             return false;

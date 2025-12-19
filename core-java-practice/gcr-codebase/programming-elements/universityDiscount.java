@@ -1,4 +1,4 @@
-public class universityDiscount {
+public class UniversityDiscount {
     public static void main(String[] args) {
         double originalFee = 125000.0; // Original university fee (given in question)
         double discountPercentage = 10.0; // Discount percentage (given in question)

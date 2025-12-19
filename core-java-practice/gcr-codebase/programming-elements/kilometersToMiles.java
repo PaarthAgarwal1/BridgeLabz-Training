@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class kilometersToMiles {
+public class KilometersToMiles {
     public static double convertKmToMiles(double kilometers) {
         return Math.round(kilometers * 0.621371 * 100.0) / 100.0;
     }

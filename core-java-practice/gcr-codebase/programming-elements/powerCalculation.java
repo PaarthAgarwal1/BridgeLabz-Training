@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class powerCalculation {
+public class PowerCalculation {
     public static int calculatePower(int base, int exponent) {
         return (int)Math.pow(base, exponent);
     }

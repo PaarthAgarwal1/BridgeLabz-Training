@@ -1,4 +1,4 @@
-public class penDistribution {
+public class PenDistribution {
     public static void main(String[] args) {
         int totalPens = 14; // Total number of pens (given in question)
         int students = 3; // Number of students (given in question)

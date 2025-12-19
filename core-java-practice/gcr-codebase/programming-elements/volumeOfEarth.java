@@ -1,4 +1,4 @@
-public class volumeOfEarth {
+public class VolumeOfEarth {
     public static void main(String[] args) {
         int radiusKm = 6378;// Radius of the Earth in kilometers (given in question)
         double radiusMiles = Math.round(radiusKm * 0.621371 * 100.0) / 100.0;

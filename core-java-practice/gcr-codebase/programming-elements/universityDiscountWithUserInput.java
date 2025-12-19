@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class universityDiscountWithUserInput {
+public class UniversityDiscountWithUserInput {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the original university fee (Ex-125000.0) :");

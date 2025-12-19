@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class volumeOfCylinder {
+public class VolumeOfCylinder {
     public static double calculateVolume(double radius, double height) {
         return Math.round(Math.PI * radius * radius * height * 100.0) / 100.0;
     }

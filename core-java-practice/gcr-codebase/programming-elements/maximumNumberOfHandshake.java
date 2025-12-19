@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class maximumNumberOfHandshake {
+public class MaximumNumberOfHandshake {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of people (Ex-5): ");

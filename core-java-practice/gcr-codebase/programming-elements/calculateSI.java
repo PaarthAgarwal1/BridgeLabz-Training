@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class calculateSI {
+public class CalculateSI {
     public static double calculateSimpleInterest(double principal, double rate, double time) {
         return Math.round((principal * rate * time) / 100 * 100.0) / 100.0;
     }

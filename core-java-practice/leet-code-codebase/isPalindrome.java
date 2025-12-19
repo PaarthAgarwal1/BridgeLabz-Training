@@ -1,4 +1,4 @@
-public class isPalindrome {
+public class IsPalindrome {
     public static boolean isPalindrome(int x) {
         // Negative numbers are not palindromes
         if (x < 0) {
