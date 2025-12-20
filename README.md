@@ -2,22 +2,20 @@ BridgeLabz-Training
 
 📁 Project Structure
 BridgeLabz-Training/
-|
-+-- core-java-practice/       (Branch & Folder Name)
-|   |
-|   +-- gcr-codebase/
-|   |   |
-|   |   +-- programming-elements/
-|   |   |
-|   |   +-- control-flow/
-|   |   |
-|   |   +-- arrays/
-|   |
-|   +-- leet-code-codebase/
-|   |
-|   +-- scenario-based/
-|
-+-- README.md
+│
+├── core-java-practice/        (Branch & Folder Name)
+│   │
+│   ├── gcr-codebase/
+│   │   ├── programming-elements/
+│   │   ├── control-flow/
+│   │   └── arrays/
+│   │
+│   ├── leet-code-codebase/
+│   │
+│   └── scenario-based/
+│
+└── README.md
+
 
 📅 Daily Progress Log
 Day 1 (17-12-2025)
