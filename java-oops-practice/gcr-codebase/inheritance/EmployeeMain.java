@@ -72,12 +72,10 @@ class Intern extends Employee {
         System.out.println("Position: Intern | Institute: " + institute);
     }
 }
-
-// main class to execute the employee hierarchy
 public class EmployeeMain {
     public static void main(String[] args) {
 
-        // creating sample employee objects with new data
+        // creating sample employee objects with new data 
         Manager manager = new Manager("Rahul", 201, 90000, 8);
         Developer developer = new Developer("Neha", 202, 65000, "React");
         Intern intern = new Intern("Arjun", 203, 25000, "Stanford University");
