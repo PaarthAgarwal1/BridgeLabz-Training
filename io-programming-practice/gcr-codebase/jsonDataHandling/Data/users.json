@@ -1,0 +1,44 @@
+[
+  {
+    "id": 101,
+    "name": "Paarth Agarwal",
+    "age": 26,
+    "email": "paarth@gmail.com",
+    "skills": ["Java", "React"]
+  },
+  {
+    "id": 102,
+    "name": "Amit Sharma",
+    "age": 22,
+    "email": "amit@gmail.com",
+    "skills": ["Spring Boot", "MySQL"]
+  },
+  {
+    "id": 103,
+    "name": "Riya Gupta",
+    "age": 29,
+    "email": "riya@gmail.com",
+    "skills": ["Python", "Django"]
+  },
+  {
+    "id": 104,
+    "name": "Neha Verma",
+    "age": 27,
+    "email": "neha@gmail.com",
+    "skills": ["JavaScript", "Node.js"]
+  },
+  {
+    "id": 105,
+    "name": "Rahul Singh",
+    "age": 24,
+    "email": "rahul@gmail.com",
+    "skills": ["AWS", "DevOps"]
+  },
+  {
+    "id": 106,
+    "name": "Sneha Patel",
+    "age": 31,
+    "email": "sneha@gmail.com",
+    "skills": ["HTML", "CSS", "Bootstrap"]
+  }
+]
