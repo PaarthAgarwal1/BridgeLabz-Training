@@ -10,21 +10,23 @@ import java.util.Scanner;
 public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program");
-        Scanner sc = new Scanner(System.in);
-        AddressBookService service=new AddressBookService();
-        Contact c1 = new Contact(
-                "Rahul", "Sharma", "Delhi", "Delhi","Delhi",
-                "110001", "9999999999", "rahul@gmail.com"
+        AddressBookDirectoryService directoryService =
+                new AddressBookDirectoryService();
+
+        // Create Address Books
+        directoryService.createAddressBook("Personal");
+        directoryService.createAddressBook("Office");
+
+        // Add Contacts
+        directoryService.getAddressBook("Personal").getContacts().add(new Contact("Rahul", "Sharma", "Delhi", "Delhi","Delhi", "110001", "9999999999", "rahul@gmail.com")
         );
 
-
-        Contact c2 = new Contact(
-                "Rahul", "Sharma", "Noida", "UP","Up",
-                "201301", "8888888888", "rahul2@gmail.com"
+        directoryService.getAddressBook("Office").getContacts().add(new Contact("Amit", "Verma", "Delhi", "Delhi","Delhi", "201301", "8888888888", "amit@gmail.com")
         );
 
-
-        service.addContact(c1);
-        service.addContact(c2); //Duplicate 
+        // Search
+        directoryService.searchPersonByCity("Delhi");
+        directoryService.searchPersonByCity("UP");
+        directoryService.searchPersonByState("Delhi");
     }
 }
