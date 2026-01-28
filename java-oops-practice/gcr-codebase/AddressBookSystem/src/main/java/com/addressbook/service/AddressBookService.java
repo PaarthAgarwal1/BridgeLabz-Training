@@ -2,6 +2,7 @@ package com.addressbook.service;
 
 import com.addressbook.dao.AddressBookDAO;
 import com.addressbook.dao.AddressBookDirectoryDAO;
+import com.addressbook.dao.AddressBookFileDAO;
 import com.addressbook.model.Contact;
 
 import java.util.List;
@@ -9,10 +10,12 @@ import java.util.List;
 public class AddressBookService {
     private AddressBookDAO addressBookDAO;
     private AddressBookDirectoryDAO directoryDAO;
+    private AddressBookFileDAO fileDAO;
 
-    public AddressBookService(AddressBookDirectoryDAO directoryDAO,AddressBookDAO addressBookDAO){
+    public AddressBookService(AddressBookDirectoryDAO directoryDAO,AddressBookDAO addressBookDAO,AddressBookFileDAO fileDAO){
         this.addressBookDAO=addressBookDAO;
         this.directoryDAO=directoryDAO;
+        this.fileDAO=fileDAO;
     }
 
     public void addContact(Contact contact){
@@ -46,5 +49,14 @@ public class AddressBookService {
         for (Contact contact:addressBookDAO.getAllContacts()){
             System.out.println(contact);
         }
+    }
+    public void writeContactsToFile(){
+        List<Contact> contacts=addressBookDAO.getAllContacts();
+        if(contacts.isEmpty()){
+            System.out.println("Address Book is empty");
+            return;
+        }
+        fileDAO.writeToFile(contacts);
+        System.out.println("Contacts written to file successfully");
     }
 }
