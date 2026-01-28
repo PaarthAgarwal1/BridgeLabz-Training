@@ -8,8 +8,12 @@ import java.util.List;
 
 public class AddressBookDAO {
     private List<Contact> contactList=new ArrayList<>();
-    public void addContact(Contact contact){
+    public boolean addContact(Contact contact){
+        if(contactList.contains(contact)){
+            return false;
+        }
         contactList.add(contact);
+        return true;
     }
     public List<Contact> getAllContacts(){
         return contactList;
@@ -22,7 +26,6 @@ public class AddressBookDAO {
         }
         return null;
     }
-    // UC
     public void updateContact(Contact contact,String city,String state,String zip,String phoneNumber,String email){
         contact.setCity(city);
         contact.setState(state);
