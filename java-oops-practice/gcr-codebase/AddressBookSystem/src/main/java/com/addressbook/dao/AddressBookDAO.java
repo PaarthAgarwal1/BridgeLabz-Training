@@ -3,6 +3,7 @@ package com.addressbook.dao;
 import com.addressbook.model.Contact;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class AddressBookDAO {
@@ -27,5 +28,16 @@ public class AddressBookDAO {
         contact.setZip(zip);
         contact.setPhoneNumber(phoneNumber);
         contact.setEmail(email);
+    }
+    public boolean deleteContact(String name){
+        Iterator<Contact> iterator=contactList.iterator();
+        while (iterator.hasNext()){
+            Contact contact=iterator.next();
+            if(contact.getFirstName().equalsIgnoreCase(name)){
+                iterator.remove();
+                return true;
+            }
+        }
+        return false;
     }
 }

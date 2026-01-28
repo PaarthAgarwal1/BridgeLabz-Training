@@ -21,4 +21,7 @@ public class AddressBookService {
         addressBookDAO.updateContact(contact,city,state,zip,phoneNumber,email);
         return true;
     }
+    public boolean deleteContact(String name){
+        return addressBookDAO.deleteContact(name);
+    }
 }

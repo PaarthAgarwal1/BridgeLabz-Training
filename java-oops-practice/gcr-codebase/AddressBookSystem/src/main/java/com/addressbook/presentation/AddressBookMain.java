@@ -83,5 +83,18 @@ public class AddressBookMain {
         } else {
             System.out.println("Contact Not Found");
         }
+
+        System.out.print("Enter First Name to Delete: ");
+        String fName = sc.nextLine();
+
+
+        boolean deleted = service.deleteContact(fName);
+
+
+        if (deleted) {
+            System.out.println("Contact Deleted Successfully");
+        } else {
+            System.out.println("Contact Not Found");
+        }
     }
 }
