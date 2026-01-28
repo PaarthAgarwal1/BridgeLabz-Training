@@ -59,4 +59,13 @@ public class AddressBookService {
         fileDAO.writeToFile(contacts);
         System.out.println("Contacts written to file successfully");
     }
+    public void readContactsFormFile(){
+        List<String> contacts=fileDAO.readFromFile();
+        if(contacts.isEmpty()){
+            System.out.println("File is Empty");
+            return;
+        }
+        System.out.println("Contacts read from file : ");
+        contacts.forEach(System.out::println);
+    }
 }

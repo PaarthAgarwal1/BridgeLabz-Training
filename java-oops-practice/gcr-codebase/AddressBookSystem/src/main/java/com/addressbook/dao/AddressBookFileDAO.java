@@ -2,9 +2,8 @@ package com.addressbook.dao;
 
 import com.addressbook.model.Contact;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AddressBookFileDAO {
@@ -18,5 +17,17 @@ public class AddressBookFileDAO {
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
+    }
+    public List<String> readFromFile(){
+        List<String> contactsFromFile=new ArrayList<>();
+        try(BufferedReader reader=new BufferedReader(new FileReader(FILE_PATH))){
+            String line;
+            while ((line=reader.readLine())!=null){
+                contactsFromFile.add(line);
+            }
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+        return contactsFromFile;
     }
 }
