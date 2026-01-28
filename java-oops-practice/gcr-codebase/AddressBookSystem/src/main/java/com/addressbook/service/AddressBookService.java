@@ -24,4 +24,13 @@ public class AddressBookService {
     public boolean deleteContact(String name){
         return addressBookDAO.deleteContact(name);
     }
+    public void displayAllContact(){
+        if(addressBookDAO.getAllContacts().isEmpty()){
+            System.out.println("Address Book is Empty");
+            return;
+        }
+        for (Contact contact:addressBookDAO.getAllContacts()){
+            System.out.println(contact);
+        }
+    }
 }

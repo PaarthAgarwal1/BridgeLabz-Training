@@ -22,6 +22,7 @@ public class AddressBookDAO {
         }
         return null;
     }
+    // UC
     public void updateContact(Contact contact,String city,String state,String zip,String phoneNumber,String email){
         contact.setCity(city);
         contact.setState(state);
