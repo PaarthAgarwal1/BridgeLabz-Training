@@ -7,8 +7,11 @@ import com.addressbook.model.Contact;
 import java.util.List;
 
 public class AddressBookDirectoryService {
-    private AddressBookDirectoryDAO dao=new AddressBookDirectoryDAO();
+    private AddressBookDirectoryDAO dao;
 
+    public AddressBookDirectoryService(AddressBookDirectoryDAO dao){
+        this.dao=dao;
+    }
     public void createAddressBook(String name){
         boolean created=dao.addAddressBook(name);
         if (created){

@@ -7,7 +7,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class AddressBookDAO {
-    private List<Contact> contactList=new ArrayList<>();
+    private List<Contact> contactList;
+    public AddressBookDAO(List<Contact> contacts){
+        this.contactList=contacts;
+    }
     public boolean addContact(Contact contact){
         if(contactList.contains(contact)){
             return false;
