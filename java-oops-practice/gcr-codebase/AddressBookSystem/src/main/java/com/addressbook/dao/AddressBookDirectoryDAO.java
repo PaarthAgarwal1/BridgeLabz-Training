@@ -10,6 +10,8 @@ import java.util.Map;
 
 public class AddressBookDirectoryDAO {
     private Map<String , AddressBook> addressBookMap=new HashMap<>();
+    private Map<String , List<Contact>> cityPersonMap=new HashMap<>();
+    private Map<String , List<Contact>> statePersonMap=new HashMap<>();
 
     public boolean addAddressBook(String name){
         if(addressBookMap.containsKey(name)){
@@ -47,5 +49,18 @@ public class AddressBookDirectoryDAO {
             }
         }
         return result;
+    }
+
+    public void addToCityStateMap(Contact contact){
+        cityPersonMap.computeIfAbsent(contact.getCity(),k->new ArrayList<>()).add(contact);
+        statePersonMap.computeIfAbsent(contact.getState(),k->new ArrayList<>()).add(contact);
+    }
+
+    public List<Contact> getPersonByCity(String city){
+        return cityPersonMap.getOrDefault(city,new ArrayList<>());
+    }
+
+    public List<Contact> getPersonByState(String state){
+        return statePersonMap.getOrDefault(state,new ArrayList<>());
     }
 }

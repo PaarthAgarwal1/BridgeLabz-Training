@@ -39,5 +39,21 @@ public class AddressBookDirectoryService {
         System.out.println("Person in state "+state+" : ");
         contacts.forEach(System.out::println);
     }
+    public void viewPersonByCity(String city){
+        List<Contact> list=dao.getPersonByCity(city);
+        if(list.isEmpty()){
+            System.out.println("No person found in city : "+city);
+            return;
+        }
+        list.forEach(System.out::println);
+    }
+    public void viewPersonByState(String state){
+        List<Contact> list=dao.getPersonByState(state);
+        if(list.isEmpty()){
+            System.out.println("No person found in state : "+state);
+            return;
+        }
+        list.forEach(System.out::println);
+    }
 
 }

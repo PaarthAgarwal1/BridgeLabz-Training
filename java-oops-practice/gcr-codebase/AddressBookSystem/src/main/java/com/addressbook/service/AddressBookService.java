@@ -1,12 +1,19 @@
 package com.addressbook.service;
 
 import com.addressbook.dao.AddressBookDAO;
+import com.addressbook.dao.AddressBookDirectoryDAO;
 import com.addressbook.model.Contact;
 
 import java.util.List;
 
 public class AddressBookService {
-    private AddressBookDAO addressBookDAO=new AddressBookDAO();
+    private AddressBookDAO addressBookDAO;
+    private AddressBookDirectoryDAO directoryDAO;
+
+    public AddressBookService(AddressBookDirectoryDAO directoryDAO,AddressBookDAO addressBookDAO){
+        this.addressBookDAO=addressBookDAO;
+        this.directoryDAO=directoryDAO;
+    }
 
     public void addContact(Contact contact){
         boolean added=addressBookDAO.addContact(contact);
@@ -15,6 +22,7 @@ public class AddressBookService {
         }else {
             System.out.println("Duplicate Contact Found! Not Added");
         }
+        directoryDAO.addToCityStateMap(contact);
     }
     public List<Contact> getContacts(){
         return addressBookDAO.getAllContacts();
