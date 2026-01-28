@@ -55,5 +55,13 @@ public class AddressBookDirectoryService {
         }
         list.forEach(System.out::println);
     }
+    public void countPersonByCity(String city){
+        int count=dao.countByCity(city);
+        System.out.println("Total person in city "+city+" : "+count);
+    }
+    public void countPersonByState(String state){
+        int count=dao.countByState(state);
+        System.out.println("Total person in state "+state+" : "+count);
+    }
 
 }

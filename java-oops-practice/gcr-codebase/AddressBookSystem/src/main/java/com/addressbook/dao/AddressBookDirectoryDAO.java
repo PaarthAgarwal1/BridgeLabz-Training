@@ -63,4 +63,12 @@ public class AddressBookDirectoryDAO {
     public List<Contact> getPersonByState(String state){
         return statePersonMap.getOrDefault(state,new ArrayList<>());
     }
+
+    public int countByCity(String city){
+        return cityPersonMap.getOrDefault(city,new ArrayList<>()).size();
+    }
+
+    public int countByState(String state){
+        return statePersonMap.getOrDefault(state,new ArrayList<>()).size();
+    }
 }
