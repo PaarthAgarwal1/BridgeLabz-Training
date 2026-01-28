@@ -48,5 +48,40 @@ public class AddressBookMain {
         System.out.println("\nContact Added Successfully!");
         System.out.println("------Address Book------");
         service.getContacts().forEach(System.out::println);
+
+
+        System.out.print("Enter First Name to Edit: ");
+        String name = sc.nextLine();
+
+
+        System.out.print("New City: ");
+        String newCity = sc.nextLine();
+
+
+        System.out.print("New State: ");
+        String newState = sc.nextLine();
+
+
+        System.out.print("New Zip: ");
+        String newZip = sc.nextLine();
+
+
+        System.out.print("New Phone: ");
+        String newPhone = sc.nextLine();
+
+
+        System.out.print("New Email: ");
+        String newEmail = sc.nextLine();
+
+
+        boolean updated = service.editContact(name, newCity,newState,newZip,newPhone,newEmail);
+
+
+        if (updated) {
+            System.out.println("Contact Updated Successfully");
+            service.getContacts().forEach(System.out::println);
+        } else {
+            System.out.println("Contact Not Found");
+        }
     }
 }

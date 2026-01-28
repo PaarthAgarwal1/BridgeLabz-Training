@@ -13,4 +13,12 @@ public class AddressBookService {
     public List<Contact> getContacts(){
         return addressBookDAO.getAllContacts();
     }
+    public boolean editContact(String name,String city,String state,String zip,String phoneNumber,String email){
+        Contact contact=addressBookDAO.findByName(name);
+        if(contact==null){
+            return false;
+        }
+        addressBookDAO.updateContact(contact,city,state,zip,phoneNumber,email);
+        return true;
+    }
 }
