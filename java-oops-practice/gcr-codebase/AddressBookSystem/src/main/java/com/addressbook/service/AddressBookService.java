@@ -6,6 +6,8 @@ import com.addressbook.dao.AddressBookFileDAO;
 import com.addressbook.model.Contact;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class AddressBookService {
     private AddressBookDAO addressBookDAO;
@@ -58,6 +60,12 @@ public class AddressBookService {
         }
         fileDAO.writeToFile(contacts);
         System.out.println("Contacts written to file successfully");
+    }
+    // UC17 - Non Blocking IO
+    public void writeToFileAsync() {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.submit(this::writeContactsToFile);
+        executor.shutdown();
     }
     public void readContactsFormFile(){
         List<String> contacts=fileDAO.readFromFile();
