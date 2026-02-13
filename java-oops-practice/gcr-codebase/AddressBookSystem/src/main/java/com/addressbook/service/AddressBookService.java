@@ -63,9 +63,9 @@ public class AddressBookService {
     }
     // UC17 - Non Blocking IO
     public void writeToFileAsync() {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.submit(this::writeContactsToFile);
-        executor.shutdown();
+        try (ExecutorService executor = Executors.newSingleThreadExecutor()) {
+            executor.submit(this::writeContactsToFile);
+        }
     }
     public void readContactsFormFile(){
         List<String> contacts=fileDAO.readFromFile();

@@ -8,10 +8,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class AddressBookCSVDAO {
 
     private static final String FILE_PATH = "Data/addressbook.csv";
+    private static final Logger LOGGER = Logger.getLogger(AddressBookCSVDAO.class.getName());
+
 
     public void writeToCSV(List<Contact> contacts) {
         try (CSVWriter writer = new CSVWriter(new FileWriter(FILE_PATH))) {
@@ -32,7 +37,7 @@ public class AddressBookCSVDAO {
             System.out.println("Contacts written to CSV successfully");
 
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error writing contacts to CSV", e);
         }
     }
 
@@ -52,7 +57,7 @@ public class AddressBookCSVDAO {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error reading contacts to CSV", e);
         }
 
         return contacts;

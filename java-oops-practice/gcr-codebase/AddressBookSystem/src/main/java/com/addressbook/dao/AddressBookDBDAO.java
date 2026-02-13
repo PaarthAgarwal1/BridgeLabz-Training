@@ -1,21 +1,25 @@
 package com.addressbook.dao;
 
+import com.addressbook.config.DBConfig;
 import com.addressbook.model.Contact;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class AddressBookDBDAO {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/addressbook";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root";
-
     public void saveContact(Contact contact) {
-        String query = "INSERT INTO contacts VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        String query = "INSERT INTO contacts " +
+                "(firstName, lastName, address, city, state, zip, phoneNumber) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(
+                DBConfig.getUrl(),
+                DBConfig.getUser(),
+                DBConfig.getPassword());
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, contact.getFirstName());
@@ -25,13 +29,13 @@ public class AddressBookDBDAO {
             stmt.setString(5, contact.getState());
             stmt.setString(6, contact.getZip());
             stmt.setString(7, contact.getPhoneNumber());
-            stmt.setString(8, contact.getEmail());
 
             stmt.executeUpdate();
-            System.out.println("Contact saved to database");
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Contact saved successfully!");
+
+        } catch (SQLException e) {
+            System.err.println("Database error: " + e.getMessage());
         }
     }
 }

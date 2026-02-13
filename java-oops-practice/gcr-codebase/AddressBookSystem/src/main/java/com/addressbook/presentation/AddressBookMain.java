@@ -88,7 +88,7 @@ public class AddressBookMain {
                     break;
 
                 case 8:
-                    System.exit(0);
+                    return;
             }
         }
     }
